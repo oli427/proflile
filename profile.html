@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: lightgray;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            height: 50px;
+            position: fixed;
+            z-index: 1000;
+            padding: 0.5rem;
+            width: 100%;
+            background-color: #fff;
+        }
+
+        .container {
+            display: grid;
+            background: linear-gradient(65deg, blue, blueviolet, red);
+            width: 100vw;
+            height: 100%;
+            padding-top: 100px;
+        }
+
+        .left-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .first-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white;
+            animation: bounce 3s infinite;
+            transition: transform 0.5s ease;
+        }
+
+        .what-i-do {
+            margin: 15px;
+            text-decoration: underline;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-50px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .left-text {
+            text-align: center;
+            color: #fff;
+        }
+
+        .right-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: end;
+            height: 100%;
+        }
+
+        .img-text {
+            color: rgb(142, 145, 151);
+            font-style: italic;
+        }
+
+        .img-text:hover {
+            transform: scale(1.1);
+            transition: transform 0.5s ease;
+        }
+
+        .topic {
+            color: #fff;
+            margin: 40px;
+        }
+
+        .nav-links {
+            gap: 15px;
+        }
+
+        .nav-link {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            color: #000;
+            text-decoration: none;
+            font-size: 21px;
+            margin: 5px;
+            border-radius: 25px;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+            color: #fff;
+            background: linear-gradient(45deg, green, rgb(0, 247, 255))
+        }
+
+        .section2 {
+            width: 100vw;
+            height: 100%;
+            padding: 30px;
+        }
+
+        .wrap-1 {
+            border-radius: 15px;
+            background-color: #fff;
+        }
+
+        .help-box {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .help {
+            margin-top: 50px;
+            font-size: 30px;
+        }
+
+        .help-cards {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            gap: 30px;
+        }
+
+        .help-card {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border: 1px solid #000;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 30px;
+            padding-bottom: 15px;
+        }
+
+        .help-card:hover {
+            transform: scale(1.2);
+            transform: translateY(-30px);
+            background: linear-gradient(25deg, blueviolet, red, orange, yellow);
+            transition: transform 0.5s ease;
+            color: rgb(56, 155, 236);
+        }
+
+        .subject {
+            text-align: center;
+            font-size: 30px;
+            text-decoration: underline;
+            padding-bottom: 20px;
+        }
+
+        .section3 {
+            width: 100vw;
+            height: 100%;
+            padding: 30px;
+        }
+
+
+        .achievments {
+            font-size: 35px;
+            margin-bottom: 25px;
+            text-decoration: underline;
+        }
+
+        .achive-box {
+            padding: 60px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 75px;
+            border-radius: 15px;
+            background-color: #fff;
+        }
+
+        .achive-box:hover {
+            box-shadow: #000;
+            background: linear-gradient(45deg, yellow, green, rgb(0, 238, 255));
+            color: rgb(17, 1, 36);
+        }
+
+        .li-achive {
+            font-size: 20px;
+            padding-bottom: 15px;
+        }
+
+        .achive-text {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section4 {
+            width: 100vw;
+            height: 100%;
+            padding: 30px;
+        }
+
+        .about {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20px;
+            text-decoration: underline;
+        }
+
+        .about-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .about-box {
+            padding: 25px;
+            border-radius: 15px;
+            background-color: #fff;
+            margin-top: 150px;
+        }
+
+        .about-box:hover {
+            border-radius: 15px;
+            background-color: #fff;
+            margin-top: 150px;
+        }
+
+        .about-box:hover {
+            background: linear-gradient(45deg, blue, blueviolet, red);
+            color: #dbf3ff;
+        }
+
+        .id-button {
+            border: none;
+            background-color: #fff;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-decoration: none;
+            color: #000;
+            border-radius: 10px;
+            position: fixed;
+            z-index: 1000;
+            bottom: 15px;
+            right: 15px;
+            font-size: 16px;
+            border: 1px solid #000;
+        }
+
+        .id-button:hover {
+            color: #fff;
+            background: linear-gradient(35deg, #000, blueviolet, blue);
+            transform: scale(1.1);
+            transition: transform 0.5s ease;
+        }
+
+        .button {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        @media screen and (min-width :600px) {
+            .nav-links {
+                gap: 25px;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            .nav-link {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 7px;
+                padding-bottom: 7px;
+            }
+
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
+                height: 100vh;
+            }
+
+            .midline {
+                position: absolute;
+                height: 100vh;
+                background-color: #fff;
+                width: 3px;
+                margin-left: 50%;
+                top: 0px;
+            }
+
+            .topic {
+                margin: 80px;
+            }
+
+            .first-img {
+                width: 270px;
+                height: 270px;
+            }
+
+            .section2 {
+                width: 100%;
+                height: 95vh;
+                padding: 30px;
+            }
+
+            
+        .help-box {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .help {
+            margin-top: 100px;
+            font-size: 35px;
+        }
+
+        .help-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
+            padding-left: 200px;
+            padding-right: 200px;
+            padding-top: 65px;
+            padding-bottom: 65px;
+        }
+
+        .help-card {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border: 1px solid #000;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 70px;
+            padding-bottom: 30px;
+        }
+
+        .section3 {
+            width: 100%;
+            height: 95vh;
+            padding: 30px;
+        }
+        .achive-box {
+            padding: 60px;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 150px;
+            border-radius: 30px;
+            background-color: #fff;
+        }
+
+        .achievments {
+            font-size: 35px;
+            text-align: center;
+            margin-bottom: 25px;
+            text-decoration: underline;
+        }
+        .section4 {
+            width: 100%;
+            height: 95vh;
+            padding: 30px;
+        }
+
+        .about{
+            font-size: 35px;
+            text-align: center;
+        }
+ 
+        .about-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+   
+        .about-box {
+            padding: 60px;
+            border-radius: 15px;
+            background-color: #fff;
+            margin-top: 150px;
+        }
+
+        .id-button {
+            border: none;
+            background-color: #fff;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-decoration: none;
+            color: #000;
+            border-radius: 10px;
+            position: fixed;
+            z-index: 1000;
+            bottom: 50px;
+            right: 50px;
+            font-size: 21px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#help" class="nav-link">Help</a>
+            <a href="#achievment" class="nav-link">Achivements</a>
+            <a href="#about" class="nav-link">About</a>
+        </ul>
+    </nav>
+    <section class="section1" id="home">
+        <div class="container">
+            <div class="left-box">
+                <div class="img-box">
+                    <img src="https://media.istockphoto.com/id/1336063208/photo/single-portrait-of-smiling-confident-male-student-teenager-looking-at-camera-in-library.jpg?s=612x612&w=0&k=20&c=w9SCRRCFa-Li82fmZotJzHdGGWXBVN7FgfBCD5NK7ic="
+                        alt="profile pic" class="first-img">
+                </div>
+                <div class="left-text">
+                    <h1 class="img-text">
+                        Oliver Langwiesner
+                    </h1>
+                    <h2 class="left-text">
+                        Web developer
+                    </h2>
+                    <h2 class="left-text">
+                        winger at his club
+                    </h2>
+                </div>
+            </div>
+            <div class="midline">
+            </div>
+            <div class="right-box">
+                <div class="topic">
+                    <h1 class="what-i-do">
+                        What I like to do
+                    </h1>
+                    <h2 class="info text">
+                        Oliver is a young football player who is very motivated to become the best, he plays for FC
+                        racing and the FLF
+                        he is also learning how to do HTML and CSS and is also motivated to learn everything.
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section2" id="help">
+        <div class="wrap-1">
+            <div class="help-box">
+                <h1 class="help">
+                    What do you need help with?
+                </h1>
+            </div>
+            <div class="help-cards">
+                <div class="help-card">
+                    <h1 class="subject">
+                        Details
+                    </h1>
+                    <h3 class="help-text">
+                        This is a small website that is my profile and if there is ay problems they should be easy to
+                        solve
+                    </h3>
+                </div>
+                <div class="help-card">
+                    <h1 class="subject">
+                        Problem
+                    </h1>
+                    <h3 class="help-text">
+                        If you have any problems refresh the website if you still
+                        have problems then delete the tab and rewrite the website link.
+                    </h3>
+                </div>
+                <div class="help-card">
+                    <h1 class="subject">
+                        Further-more
+                    </h1>
+                    <h3 class="help-text">
+                        if the problem has been solved feel free to explore my website/profile further and enjoy!
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section3" id="achievment">
+        <div class="achive-box">
+            <h1 class="achievments">
+                My achievments
+            </h1>
+            <div class="achive-content">
+                <h2 class="achive-text">
+                    Throughout my life I have a few that I find important those of wich are
+                </h2>
+                <ol class="list-1">
+                    <li class="li-achive"> Winning the lalux, wich is the luxembourgish cup every team partisipates in
+                        and we won and out of the 100 tournements I have won that one is the most important </li>
+                    <li class="li-achive"> starting to make my own websites is one of my achievments aswell. Because
+                        I really enjoy coding andIi still have much to learn but I think making and posting my website
+                        is a great achievment for me. </li>
+                    <li class="li-achive">
+                        When I was a under12 me and my team where the first team in our club to be able to play in the
+                        2nd division of the one or two year olders that was a good achievment aswell, but im sure i have
+                        many more.
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="section4" id="about">
+        <div class="about-box">
+            <h1 class="about">
+                About this website
+            </h1>
+            <div class="about-text">
+                <h2 class="about-content">
+                    This Website is a creation i made and i used the skills i have been taught to make it.The website is
+                    about me and is my profile so you can see what i do so feel free to explore further.
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="button">
+        <a href="#home" class="id-button">Go to top</a>
+    </div>
+</body>
+
+</html>
